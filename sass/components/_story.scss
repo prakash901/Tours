@@ -24,14 +24,21 @@
     height: 15rem;
     background-color: green;
     float: left;
-    //radius, center point 50% 50%
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
 
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(11.9deg); //a problem is occuring while we put skewX to 12deg
     position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+
+      //radius, center point 50% 50%
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      border-radius: none;
+    }
 
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);

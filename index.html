@@ -92,7 +92,30 @@
 
           <div class="col-1-of-2">
             <div class="composition">
+              <!-- here w is the width of each images  -->
               <img
+                srcset="img/nat-1-small.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw,300px "
+                alt="photo 1"
+                class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
+              />
+              <img
+                srcset="img/nat-2-small.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw,300px "
+                alt="photo 2"
+                class="composition__photo composition__photo--p2"
+                src="img/nat-2-large.jpg"
+              />
+              <img
+                srcset="img/nat-3-small.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw,300px "
+                alt="photo 3"
+                class="composition__photo composition__photo--p3"
+                src="img/nat-3-large.jpg"
+              />
+
+              <!-- <img
                 src="img/nat-1.jpg"
                 alt="photo 1"
                 class="composition__photo composition__photo--p1"
@@ -106,7 +129,7 @@
                 src="img/nat-3.jpg"
                 alt="photo 3"
                 class="composition__photo composition__photo--p3"
-              />
+              /> -->
             </div>
           </div>
         </div>
@@ -317,7 +340,7 @@
             </figure>
             <div class="story__text">
               <h3 class="heading-tertiary u-margin-bottom-small">
-                Wow my life is completely diff now
+                Wow my life is completely different now
               </h3>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -405,7 +428,18 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-white.png" alt="Full logo" class="footer__logo" />
+        <picture class="footer__logo">
+          <!-- content inside source tag not working -->
+          <source
+            srcset="img/logo-white.png 1x, img/logo-white-2x.png 2x"
+            media="(max-width: 37.5em)"
+          />
+          <img
+            srcset="img/logo-white.png 1x, img/logo-white-2x.png 2x"
+            alt="Full logo"
+            src="img/logo-white-2x.png"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
